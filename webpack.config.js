@@ -92,6 +92,10 @@ var plugins = [
     new CopyWebpackPlugin([{
         from: './src/libs/shim',
         to: './libs/shim'
+    }]),
+    new CopyWebpackPlugin([{
+        from: './src/libs/amazeUI',
+        to: './libs/amazeUI'
     }])
 ];
 if(currentTarget == "build"){
