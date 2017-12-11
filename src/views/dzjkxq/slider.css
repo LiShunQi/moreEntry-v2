@@ -38,7 +38,7 @@ ul{
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
-    margin: 15% auto;
+    margin: 10% auto;
 }
 .header-img{
     height: 120px;
@@ -60,6 +60,7 @@ ul{
     /*-moz-box-sizing: border-box;*/
     /*box-sizing: border-box;*/
     /*padding: 10px;*/
+    font-size: 13px;
 }
 .dzjkxq-body ul{
     padding-left: 0;
@@ -98,4 +99,11 @@ ul{
 }
 .dzjkxq-count{
     font-size: 14px;
+}
+.dzjkxq-close-icon{
+    font-size: 18px;
+   position: absolute;
+    top:0;
+    right: 4px;
+    color: #fff;
 }
