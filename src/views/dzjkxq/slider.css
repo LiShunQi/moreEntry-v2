@@ -1,5 +1,5 @@
 body{
-    font-size: 12px;
+    font-size: 14px;
 }
 li{
     list-style: none;
@@ -20,9 +20,11 @@ ul{
 .color-gray{
     color: #999;
 }
+/*分割线样式*/
 .hr-style{
     margin:0 10px 10px;
 }
+/*遮罩层样式*/
 .slider-shade{
     position: fixed;
     top: 0;
@@ -30,7 +32,9 @@ ul{
     left:0;
     right: 0;
     background: rgba(0,0,0,.4);
+    display: none;
 }
+/*详情最外层样式*/
 .dzjkxq-box{
     background: #fff;
     width: 90%;
@@ -40,6 +44,7 @@ ul{
     border-radius: 20px;
     margin: 10% auto;
 }
+/*详情头部图片样式*/
 .header-img{
     height: 120px;
     width: 100%;
@@ -48,6 +53,7 @@ ul{
     -webkit-background-size:cover;
     background-size:100% 100%;
 }
+/*头部文字样式*/
 .header-text{
     color: #fff;
     position: absolute;
@@ -89,6 +95,7 @@ ul{
     -moz-box-shadow: none;
     box-shadow: none;
 }
+/*小圆点样式*/
 .am-slider-default .am-control-nav li a{
     width: 5px;
     height: 5px;
@@ -100,6 +107,7 @@ ul{
 .dzjkxq-count{
     font-size: 14px;
 }
+/*详情关闭样式、*/
 .dzjkxq-close-icon{
     font-size: 18px;
    position: absolute;
