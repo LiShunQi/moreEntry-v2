@@ -3,7 +3,7 @@
  */
 require('static/css/base.css');
 require('static/fonts/iconfont.css');
-require('./test.css');
+require('./index.css');
 
 $('.test-btn').click(function () {
     // $('.progress').css({'width':'10%'});
