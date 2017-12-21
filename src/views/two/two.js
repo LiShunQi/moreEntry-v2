@@ -3,6 +3,7 @@
  */
 // require('../../fonts/iconfont.css')
 // require('libs/util');
+require('./two.css');
 $(document).ready(function () {
     console.log('two');
 });

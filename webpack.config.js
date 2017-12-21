@@ -45,7 +45,24 @@ var output = {
     filename: 'static/js/[name]-[hash:6].js' //文件名称
 };
 var loaders = [
-    {test: /\.css$/, loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }) },
+    {
+        test: /\.css$/,
+        use: [
+            { loader: 'style-loader' },
+            {
+                loader: 'css-loader', options: {sourceMap: true}
+            },
+            {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap: true,
+                    config: {
+                        path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
+                    }
+                }
+            }
+        ]
+    },
     {
         test: /.scss$/,
         use: [
