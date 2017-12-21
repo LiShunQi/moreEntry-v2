@@ -47,42 +47,53 @@ var output = {
 var loaders = [
     {
         test: /\.css$/,
-        use: [
-            { loader: 'style-loader' },
-            {
-                loader: 'css-loader', options: {sourceMap: true}
-            },
-            {
-                loader: 'postcss-loader',
-                options: {
-                    sourceMap: true,
-                    config: {
-                        path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
+        use:  ExtractTextPlugin.extract({
+                fallback: "style-loader",
+                use: [
+                    {
+                        loader: 'css-loader', options: {sourceMap: true}
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                            config: {
+                                path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
+                            }
+                        }
                     }
-                }
-            }
-        ]
+                ]
+              })
     },
     {
-        test: /.scss$/,
-        use: [
-            { loader: 'style-loader' },
-            {
-                loader: 'css-loader', options: {sourceMap: true}
-            },
-            {
-                loader: 'postcss-loader',
-                options: {
-                    sourceMap: true,
-                    config: {
-                        path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: [
+                {
+                    loader: 'css-loader', options: {sourceMap: true}
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        sourceMap: true,
+                        config: {
+                            path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
+                        }
                     }
+                },
+                {
+                    loader: 'sass-loader', options: { sourceMap: true }
                 }
-            },
-            {
-                loader: 'sass-loader', options: { sourceMap: true }
-            }
-        ]
+            ]
+        })
+    },
+    {
+        test: /\.js$/,
+        use:{
+            loader:'babel-loader',
+        },
+        exclude:/node_module/
     },
     {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
