@@ -18,8 +18,10 @@
     "imports-loader": "^0.7.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "node-sass": "^4.7.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "text-loader": "^0.0.1",
     "uglifyjs-webpack-plugin": "^1.0.1",
@@ -33,5 +35,13 @@
     "build": "webpack"
   },
   "author": "lsq",
-  "license": "MIT"
+  "license": "MIT",
+  "browserslist": [
+    "defaults",
+    "not ie < 11",
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ]
 }

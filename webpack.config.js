@@ -45,9 +45,27 @@ var output = {
     filename: 'static/js/[name]-[hash:6].js' //文件名称
 };
 var loaders = [
+    {test: /\.css$/, loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }) },
     {
-        test: /\.less$/,
-        loader: ExtractTextPlugin.extract('css-loader!css-loader')
+        test: /.scss$/,
+        use: [
+            { loader: 'style-loader' },
+            {
+                loader: 'css-loader', options: {sourceMap: true}
+            },
+            {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap: true,
+                    config: {
+                        path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
+                    }
+                }
+            },
+            {
+                loader: 'sass-loader', options: { sourceMap: true }
+            }
+        ]
     },
     {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -61,7 +79,6 @@ var loaders = [
             name: './static/images/[name].[ext]?' //输出目录以及名称
         }
     },
-    {test: /\.css$/, loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }) },
     {test: /\.html$/, loader: 'html-loader'}
 ];
 var plugins = [
@@ -126,7 +143,7 @@ var devServer = {
     inline: false,
     stats: { colors: true },
     host:'0.0.0.0',
-    port: 3000,
+    port: 3300,
     contentBase: './build'
     // proxy: {
     //     '/taskManage': {
