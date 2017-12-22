@@ -1,0 +1,75 @@
+.gg-slider{
+  &:hover{
+    .arrow{
+      display: block;
+    }
+  }
+  position: relative;
+  top: 10px;
+  left: 100px;
+  width: 500px;
+  height: 300px;
+  border: 1px solid #eee;
+  overflow: hidden;
+  margin-bottom: 20px;
+  .gg-slides{
+    font-size: 0;
+    width: 1500px;
+    position: relative;
+     li{
+       font-size: 30px;
+       color: #fff;
+       text-align: center;
+       display: inline-block;
+       width:500px;
+       height: 300px;
+     }
+    li:nth-child(1){
+      background-color: beige;
+    }
+    li:nth-child(2){
+      background-color: rebeccapurple;
+    }
+    li:nth-child(3){
+      background-color: green;
+    }
+  }
+  .gg-dot{
+    width: 100%;
+    position: absolute;
+    bottom:0;
+    text-align: center;
+    z-index: 99;
+    li{
+      margin: 0 6px;
+      display: inline-block;
+      a{
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #000;
+      }
+    }
+  }
+  .arrow{
+    display: none;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    padding: 5px;
+    background: rgba(0,0,0,.4);
+    color: #fff;
+    top: 50%;
+    margin-top: -17px;
+    font-size: 20px;
+  }
+  .slide-pre{
+    left: 10px;
+  }
+  .slide-next{
+    right: 10px;
+  }
+}
