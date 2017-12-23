@@ -12,27 +12,36 @@
   border: 1px solid #eee;
   overflow: hidden;
   margin-bottom: 20px;
+  border-radius:8px;
   .gg-slides{
     font-size: 0;
-    width: 1500px;
-    position: relative;
+    width: 2500px;
+    position: absolute;
+    top: 0;
      li{
+       position: relative;
        font-size: 30px;
-       color: #fff;
-       text-align: center;
        display: inline-block;
        width:500px;
        height: 300px;
+       img{
+         width: 100%;
+         height: 100%;
+       }
+       span{
+         position: absolute;
+         width: 40px;
+         height: 40px;
+         text-align: center;
+         line-height: 40px;
+         color: #fff;
+         display: inline-block;
+         top: 10px;
+         left: 10px;
+         border-radius: 50%;
+         background: rgba(0,0,0,.4)
+       }
      }
-    li:nth-child(1){
-      background-color: beige;
-    }
-    li:nth-child(2){
-      background-color: rebeccapurple;
-    }
-    li:nth-child(3){
-      background-color: green;
-    }
   }
   .gg-dot{
     width: 100%;
@@ -50,6 +59,9 @@
         border-radius: 50%;
         background: #000;
       }
+    }
+    .active{
+      background: blue;
     }
   }
   .arrow{

@@ -4,6 +4,9 @@
 // require('../../fonts/iconfont.css')
 // require('libs/util');
 require('./two.css');
+var common = require('libs/common.js');
 $(document).ready(function () {
-    console.log('two');
+    document.getElementById('test').onclick = function () {
+        common.addClass(document.querySelectorAll('.two')[0],'aa')
+    };
 });
