@@ -1,0 +1,41 @@
+.shade{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.4);
+  z-index: 99;
+  .content{
+    background-color: #fff;
+    width: 320px;
+    border: 1px solid #e1e1e1;
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    .content-header{
+      position: relative;
+      cursor: move;
+      height: 40px;
+      line-height: 40px;
+      overflow: hidden;
+      text-align: center;
+      border-bottom: 1px solid #e2e2e2;
+      i{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 10px;
+        font-size: 20px;
+        color: #eee;
+        cursor: pointer;
+        &:hover{
+          color: #000;
+        }
+      }
+    }
+    .content-body{
+      padding: 30px 10px;
+    }
+  }
+}
