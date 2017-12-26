@@ -10,5 +10,9 @@ layui.use('layer',function () {
     var layer = layui.layer;
     $('#test').on('click',function () {
         layer.alert('index')
-    })
+    });
+
+    var reg = /\s/g;
+    var str = '|   kdkd kk  kk        |';
+    console.log(str.split(' ').join(''));
 });

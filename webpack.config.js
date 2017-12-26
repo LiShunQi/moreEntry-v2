@@ -93,7 +93,7 @@ var loaders = [
         use:{
             loader:'babel-loader',
         },
-        exclude:/node_module/
+        exclude:/node_module|jquery/ //要排除的目录
     },
     {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
