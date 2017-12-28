@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>one</title>
+    <link rel="stylesheet" href="../../libs/layui/css/layui.css">
     <!--[if lt IE 9]>
 
     <![endif]-->
@@ -12,5 +13,72 @@
     <div>
         <i class="iconfont icon-jinggao i1"></i>
     </div>
+
+    <!--<table class="layui-table" lay-data="{url:'../../data/data.json', cellMinWidth: 80, }">-->
+        <!--<thead>-->
+        <!--<tr>-->
+            <!--<th lay-data="{field:'username', width:80, edit: 'text'}" rowspan="3">联系人</th>-->
+            <!--<th lay-data="{field:'amount', width:120}" rowspan="3">金额</th>-->
+            <!--<th lay-data="{align:'center'}" colspan="5">地址1</th>-->
+            <!--<th lay-data="{align:'center'}" colspan="2">地址2</th>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<th lay-data="{field:'province'}" rowspan="2">省</th>-->
+            <!--<th lay-data="{field:'city'}" rowspan="2">市</th>-->
+            <!--<th lay-data="{align:'center'}" colspan="3">详细</th>-->
+            <!--<th lay-data="{field:'province'}" rowspan="2">省</th>-->
+            <!--<th lay-data="{field:'city'}" rowspan="2">市</th>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<th lay-data="{field:'street'}" >街道</th>-->
+            <!--<th lay-data="{field:'address'}">小区</th>-->
+            <!--<th lay-data="{field:'house'}">单元</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+    <!--</table>-->
+
+    <table class="layui-table" lay-filter="demo" id="test" lay-data="{url:'../../data/data.json', cellMinWidth: 80, }">
+        <thead>
+        <tr>
+            <th lay-data="{field:'username', width:80, edit: 'text', templet: '#titleTpl'}" rowspan="3" >联系人</th>
+            <th  lay-data="{field:'2'}"  rowspan="2" >金额</th>
+            <th lay-data="{field:'2'}" colspan="2" rowspan="1">地址1</th>
+            <th lay-data="{field:'2'}"  rowspan="2" >地址2</th>
+            <th lay-data="{field:'2'}" rowspan="2" >地址2</th>
+            <th lay-data="{field:'2'}"  rowspan="2" >地址2</th>
+            <th lay-data="{field:'2'}"  colspan="2" rowspan="1">地址2</th>
+            <th lay-data="{field:'2'}" rowspan="2" >地址2</th>
+        </tr>
+        <tr>
+            <th lay-data="{field:'2'}"  rowspan="1" >地址2</th>
+            <th lay-data="{field:'2'}"  rowspan="1" >地址2</th>
+            <th lay-data="{field:'2'}" rowspan="1" >地址2</th>
+            <th lay-data="{field:'2'}"   rowspan="1" >地址2</th>
+        </tr>
+        <tr>
+            <th  lay-data="{field:'street'}" rowspan="1" colspan="1">街道</th>
+            <th lay-data="{field:'street'}" rowspan="1" colspan="1">小区</th>
+            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
+            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
+            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
+            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
+            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
+            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
+            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
+        </tr>
+        </thead>
+    </table>
+
+<script src="../../libs/layui/layui.js"></script>
+    <script>
+        layui.use('table', function(){
+            var table = layui.table;
+
+        });
+    </script>
+
+    <script type="text/html" id="titleTpl">
+        <a href="#" class="layui-table-link">aa</a>
+    </script>
 </body>
 </html>

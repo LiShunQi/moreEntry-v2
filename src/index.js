@@ -12,7 +12,10 @@ layui.use('layer',function () {
         layer.alert('index')
     });
 
-    var reg = /\s/g;
-    var str = '|   kdkd kk  kk        |';
-    console.log(str.split(' ').join(''));
+    var string = 'xxxyyyybb'; //3x4y2b
+    var reg = /(x+)(y+)(b+)/;
+    string.replace(reg,function (a,b,c,d) {
+        console.log(b.length+b[0]+c.length+c[0]+d.length+d[0]);
+    });
+    console.log(string.match(reg));
 });

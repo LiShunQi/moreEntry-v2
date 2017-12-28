@@ -141,6 +141,14 @@ var plugins = [
     new CopyWebpackPlugin([{
         from: './src/libs/amazeUI',
         to: './libs/amazeUI'
+    }]),
+    new CopyWebpackPlugin([{
+        from: './src/data',
+        to: './data'
+    }]),
+    new CopyWebpackPlugin([{
+        from: './src/libs/extends',
+        to: './libs/extends'
     }])
 ];
 if(currentTarget == "build"){
@@ -172,11 +180,11 @@ var devServer = {
     stats: { colors: true },
     host:'0.0.0.0',
     port: 3300,
-    contentBase: './build'
+    contentBase: './build',
     // proxy: {
-    //     '/taskManage': {
-    //         target: 'http://192.168.1.105:8080',
-    //         pathRewrite: {'^/taskManage' : '/taskManage'},
+    //     '/': {
+    //         target: 'http://www.layui.com',
+    //         pathRewrite: {'^/taskManage' : '/'},
     //         changeOrigin: true
     //     }
     // }
