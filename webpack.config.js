@@ -128,8 +128,12 @@ var plugins = [
         // 需要依赖的模块
         chunks: ['common', 'index'],
         // 根据依赖自动排序
-        chunksSortMode: 'dependency'
+        chunksSortMode: 'dependency',
+        favicon:'./src/favicon.ico'
     }),
+    // new HtmlWebpackPlugin({
+    //     favicon:'./src/favicon.ico'
+    // }),
     new CopyWebpackPlugin([{
         from: './src/libs/layui',
         to: './libs/layui'
@@ -201,7 +205,8 @@ pages.forEach(function(pathname) {
         minify: { //压缩HTML文件
             removeComments: true,//移除HTML中的注释
             collapseWhitespace: false //删除空白符与换行符
-        }
+        },
+        favicon:'./src/favicon.ico'
     };
     plugins.push(new HtmlWebpackPlugin(conf));
 });

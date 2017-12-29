@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>one</title>
+    <!--<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">-->
     <link rel="stylesheet" href="../../libs/layui/css/layui.css">
     <!--[if lt IE 9]>
 
@@ -69,6 +70,38 @@
         </thead>
     </table>
 
+
+    <table id="newtable" class="layui-table">
+        <thead>
+        <tr>
+            <th rowspan="3" lay-data="{field:'name',edit: 'text'}">应税凭证名称</th>
+            <th rowspan="2" lay-data="{align:'center'}">计税金额或件数</th>
+            <th colspan="2" lay-data="{align:'center'}">核定征收</th>
+            <th rowspan="2" lay-data="{align:'center'}">通用税率</th>
+            <th rowspan="2" lay-data="{align:'center'}">本期应纳税额</th>
+            <th rowspan="2" lay-data="{align:'center'}">本期已纳税额</th>
+            <th colspan="2" lay-data="{align:'center'}">本期减免税额</th>
+            <th rowspan="2" lay-data="{align:'center'}">本期应补（退）税额</th>
+        </tr>
+        <tr>
+            <th lay-data="{align:'center'}">核定计税依据</th>
+            <th lay-data="{align:'center'}">核定比例</th>
+            <th lay-data="{align:'center'}">减免性质代码</th>
+            <th lay-data="{align:'center'}">减免税额</th>
+        </tr>
+        <tr>
+            <th lay-data="{field:'jine',edit: 'text'}">1</th>
+            <th lay-data="{field:'jsyj',edit: 'text'}">2</th>
+            <th lay-data="{field:'hdbl',edit: 'text'}">3</th>
+            <th lay-data="{field:'tysl',edit: 'text'}">4</th>
+            <th lay-data="{field:'bqynse',edit: 'text'}">5=1*4+2*3*4</th>
+            <th lay-data="{field:'bqynse_a',edit: 'text'}">6</th>
+            <th lay-data="{field:'jmxz',edit: 'text'}">7</th>
+            <th lay-data="{field:'jmse',edit: 'text'}">8</th>
+            <th lay-data="{field:'bqybse',edit: 'text'}">9=5-6-8</th>
+        </tr>
+        </thead>
+    </table>
 <script src="../../libs/layui/layui.js"></script>
     <script>
         layui.use('table', function(){

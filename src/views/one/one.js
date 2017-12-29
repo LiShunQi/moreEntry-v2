@@ -14,5 +14,16 @@ $(document).ready(function () {
 
     layui.use('newtable',function () {
         // var newtable = layui.newtable;
-    })
+    });
+
+    function test() {
+        var table = document.getElementById('newtable');
+        var tr = table.tHead.rows;
+        var ths =  table.tHead.getElementsByTagName('th');
+        for(var i = 0;i < ths.length; i++){
+            var colspan = ths[i].colSpan;
+            var rowspan = ths[i].rowSpan;
+        }
+    }
+    test();
 });
