@@ -32,9 +32,8 @@ require('./datepicker.scss');
         let now = (new Date()).getDate(); //今天几号
 
         today = new Date(year, month - 1, 1);
-        let thisMothFirstDay = today.getDay(); //当月第一天
 
-        let prevMonthCount = thisMothFirstDay; //上个月有几天
+        let prevMonthCount = today.getDay(); //上个月有几天
 
         let prevMonthLastDay = (new Date(year, month - 1, 0)).getDate(); //山个月最后一天
 
@@ -169,7 +168,7 @@ require('./datepicker.scss');
                 //日期点选
                $target.value =  target.getAttribute('data-time');
                 $domWrap.style.display = 'none';
-            }else if(target.classList.contains('dd-datepicker-btn-prev')){
+            }else if(target.className.indexOf('dd-datepicker-btn-prev') > -1){
                 //上一月
                 month--;
                 if(month < 1){
@@ -178,7 +177,7 @@ require('./datepicker.scss');
                 }
                 $dom = datePicker.buildHtml(year, month);
                 $domWrap.innerHTML = $dom;
-            }else if(target.classList.contains('dd-datepicker-btn-next')){
+            }else if(target.className.indexOf('dd-datepicker-btn-next') > -1){
                 //下一月
                 month++;
                 if(month > 12){
