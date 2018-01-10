@@ -155,7 +155,7 @@ var plugins = [
         to: './libs/extends'
     }])
 ];
-if(currentTarget == "build"){
+if(currentTarget === "build"){
    plugins.push(
        new UglifyJSPlugin({ //js压缩
            uglifyOptions:{
@@ -239,7 +239,7 @@ function getEntry(globPath, pathDir) {
         pathname = path.normalize(path.join(dirname,  basename));//完整路径，不包含扩展名
         pathDir = path.normalize(pathDir);
         if(pathname.startsWith(pathDir)){
-            pathname = path.normalize(pathname.substring(pathDir.length))
+            pathname = path.normalize(pathname.substring(pathDir.length)).replace(/\\/g,'/');
         }
         entries[pathname] = ['./' + entry];
     }
