@@ -1,0 +1,46 @@
+
+  .css-load-ball{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-color: #25dd6e;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+
+    &:before,&:after{
+      content: "";
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: -100%;
+      left: -50%;
+    }
+    &:before{
+      background-color: rgba(241,248,241,.7);
+      border-radius: 40%;
+      animation: 19s rotate_before linear infinite;
+    }
+    &:after{
+      background-color: rgba(241,248,241,1);
+      border-radius: 46%;
+      animation: 19s rotate_after linear infinite;
+    }
+  }
+
+@keyframes rotate_before {
+  from{
+    transform: translate(0%,0%) rotate(0deg)
+  }
+  to{
+    transform: translate(0%,-60%) rotate(360deg)
+  }
+}
+@keyframes rotate_after {
+  from{
+    transform: translate(0%,0%) rotate(0deg)
+  }
+  to{
+    transform: translate(0%,-60%) rotate(30deg)
+  }
+}
