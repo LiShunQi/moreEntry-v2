@@ -1,46 +1,53 @@
+$width : 100px; //内圆宽
+$dot-width : 10px; //点宽
+$animation-time : 19s; //动画时间
+$dot-ani-time : 3s; //点动画时间
+$offset-width: 20px; //外圆偏移
+
+body{
+  padding: 50px 0 0 40px;
+}
 .load-box{
-  width: 120px;
-  height: 120px;
+  width: $width + $offset-width;
+  height: $width + $offset-width;
   position: relative;
-  left: 50px;
-  top: 40px;
 
   .load-round{
-    width: 120px;
-    height: 120px;
+    width: $width + $offset-width;
+    height: $width + $offset-width;
     border: 1px solid #25dd6e;
     position: absolute;
     top: 0;
     left: 0;
     border-radius: 50%;
-    animation: round 3s linear infinite;
+    animation: round $dot-ani-time linear infinite;
 
     &:after{
       content: '';
-      width: 10px;
-      height: 10px;
+      width: $dot-width;
+      height: $dot-width;
       border-radius: 50%;
       background-color: #25dd6e;
       position: absolute;
-      top: 55px;
-      left: -5px;
+      top: $width/2 + $dot-width/2;
+      left: -$dot-width/2;
     }
   }
   .css-load-ball{
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
+    width: $width;
+    height: $width;
+    line-height: $width;
     background-color: #25dd6e;
     border-radius: 50%;
     position: relative;
-    left: 10px;
-    top: 10px;
+    left: $offset-width/2;
+    top: $offset-width/2;
     overflow: hidden;
 
     &:before,&:after{
       content: "";
-      width: 200px;
-      height: 200px;
+      width: 2 * $width;
+      height: 2 * $width;
       position: absolute;
       top: -100%;
       left: -50%;
@@ -48,17 +55,16 @@
     &:before{
       background-color: rgba(241,248,241,.7);
       border-radius: 40%;
-      animation: 19s rotate_before linear infinite;
+      animation: rotate_before $animation-time linear infinite;
     }
     &:after{
       background-color: rgba(241,248,241,1);
       border-radius: 46%;
-      animation: 19s rotate_after linear infinite;
+      animation: rotate_after $animation-time linear infinite;
     }
   }
 }
-
-
+//before 动画
 @keyframes rotate_before {
   from{
     transform: translate(0%,0%) rotate(0deg)
@@ -67,6 +73,7 @@
     transform: translate(0%,-60%) rotate(360deg)
   }
 }
+//after 动画
 @keyframes rotate_after {
   from{
     transform: translate(0%,0%) rotate(0deg)
@@ -75,7 +82,7 @@
     transform: translate(0%,-60%) rotate(30deg)
   }
 }
-
+//圆点动画
 @keyframes round {
   from {
     transform: rotate(0deg)
