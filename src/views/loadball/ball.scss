@@ -1,4 +1,31 @@
+.load-box{
+  width: 120px;
+  height: 120px;
+  position: relative;
+  left: 50px;
+  top: 40px;
 
+  .load-round{
+    width: 120px;
+    height: 120px;
+    border: 1px solid #25dd6e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    animation: round 3s linear infinite;
+
+    &:after{
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #25dd6e;
+      position: absolute;
+      top: 55px;
+      left: -5px;
+    }
+  }
   .css-load-ball{
     width: 100px;
     height: 100px;
@@ -6,6 +33,8 @@
     background-color: #25dd6e;
     border-radius: 50%;
     position: relative;
+    left: 10px;
+    top: 10px;
     overflow: hidden;
 
     &:before,&:after{
@@ -27,6 +56,8 @@
       animation: 19s rotate_after linear infinite;
     }
   }
+}
+
 
 @keyframes rotate_before {
   from{
@@ -42,5 +73,14 @@
   }
   to{
     transform: translate(0%,-60%) rotate(30deg)
+  }
+}
+
+@keyframes round {
+  from {
+    transform: rotate(0deg)
+  }
+  to{
+    transform: rotate(360deg)
   }
 }

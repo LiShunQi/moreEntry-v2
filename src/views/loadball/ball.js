@@ -5,7 +5,7 @@ require('./ball.scss');
 
 (function () {
     let $controlStyle = $('<style id="ball-stop">' +
-        '.css-load-ball:before,.css-load-ball:after{animation-play-state: paused}' +
+        '.css-load-ball:before,.css-load-ball:after{animation-play-state: paused !important;}' +
         '</style>');
    setTimeout(function () {
        $('head').append($controlStyle)
