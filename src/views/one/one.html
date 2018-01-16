@@ -3,115 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>one</title>
-    <!--<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">-->
     <link rel="stylesheet" href="../../libs/layui/css/layui.css">
-    <!--[if lt IE 9]>
-
-    <![endif]-->
 </head>
 <body>
-    <div>one</div>
-    <div>
-        <i class="iconfont icon-jinggao i1"></i>
+    <div class="box">
+        <div class="child"></div>
     </div>
 
-    <!--<table class="layui-table" lay-data="{url:'../../data/data.json', cellMinWidth: 80, }">-->
-        <!--<thead>-->
-        <!--<tr>-->
-            <!--<th lay-data="{field:'username', width:80, edit: 'text'}" rowspan="3">联系人</th>-->
-            <!--<th lay-data="{field:'amount', width:120}" rowspan="3">金额</th>-->
-            <!--<th lay-data="{align:'center'}" colspan="5">地址1</th>-->
-            <!--<th lay-data="{align:'center'}" colspan="2">地址2</th>-->
-        <!--</tr>-->
-        <!--<tr>-->
-            <!--<th lay-data="{field:'province'}" rowspan="2">省</th>-->
-            <!--<th lay-data="{field:'city'}" rowspan="2">市</th>-->
-            <!--<th lay-data="{align:'center'}" colspan="3">详细</th>-->
-            <!--<th lay-data="{field:'province'}" rowspan="2">省</th>-->
-            <!--<th lay-data="{field:'city'}" rowspan="2">市</th>-->
-        <!--</tr>-->
-        <!--<tr>-->
-            <!--<th lay-data="{field:'street'}" >街道</th>-->
-            <!--<th lay-data="{field:'address'}">小区</th>-->
-            <!--<th lay-data="{field:'house'}">单元</th>-->
-        <!--</tr>-->
-        <!--</thead>-->
-    <!--</table>-->
+    <!--负margin-->
+    <div class="father">
+        <div class="son"></div>
+    </div>
 
-    <table class="layui-table" lay-filter="demo" id="test" lay-data="{url:'../../data/data.json', cellMinWidth: 80, }">
+    <table>
+        <colgroup span="2" align="left"></colgroup>
+        <colgroup align="right"></colgroup>
         <thead>
-        <tr>
-            <th lay-data="{field:'username', width:80, edit: 'text', templet: '#titleTpl'}" rowspan="3" >联系人</th>
-            <th  lay-data="{field:'2'}"  rowspan="2" >金额</th>
-            <th lay-data="{field:'2'}" colspan="2" rowspan="1">地址1</th>
-            <th lay-data="{field:'2'}"  rowspan="2" >地址2</th>
-            <th lay-data="{field:'2'}" rowspan="2" >地址2</th>
-            <th lay-data="{field:'2'}"  rowspan="2" >地址2</th>
-            <th lay-data="{field:'2'}"  colspan="2" rowspan="1">地址2</th>
-            <th lay-data="{field:'2'}" rowspan="2" >地址2</th>
-        </tr>
-        <tr>
-            <th lay-data="{field:'2'}"  rowspan="1" >地址2</th>
-            <th lay-data="{field:'2'}"  rowspan="1" >地址2</th>
-            <th lay-data="{field:'2'}" rowspan="1" >地址2</th>
-            <th lay-data="{field:'2'}"   rowspan="1" >地址2</th>
-        </tr>
-        <tr>
-            <th  lay-data="{field:'street'}" rowspan="1" colspan="1">街道</th>
-            <th lay-data="{field:'street'}" rowspan="1" colspan="1">小区</th>
-            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
-            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
-            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
-            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
-            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
-            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
-            <th lay-data="{field:'street'}" rowspan="1" colspan="1">单元</th>
-        </tr>
+            <tr>
+                <td>12341</td>
+                <td>1123</td>
+                <td>1sdf</td>
+            </tr>
         </thead>
+        <tbody>
+            <tr>
+                <td>er2</td>
+                <td>fghj2</td>
+                <td>fghj2</td>
+            </tr>
+            <tr>
+                <td>dfghj2</td>
+                <td>fgh2</td>
+                <td>2vbk</td>
+            </tr>
+        </tbody>
     </table>
 
-
-    <table id="newtable" class="layui-table">
-        <thead>
-        <tr>
-            <th rowspan="3" lay-data="{field:'name',edit: 'text'}">应税凭证名称</th>
-            <th rowspan="2" lay-data="{align:'center'}">计税金额或件数</th>
-            <th colspan="2" lay-data="{align:'center'}">核定征收</th>
-            <th rowspan="2" lay-data="{align:'center'}">通用税率</th>
-            <th rowspan="2" lay-data="{align:'center'}">本期应纳税额</th>
-            <th rowspan="2" lay-data="{align:'center'}">本期已纳税额</th>
-            <th colspan="2" lay-data="{align:'center'}">本期减免税额</th>
-            <th rowspan="2" lay-data="{align:'center'}">本期应补（退）税额</th>
-        </tr>
-        <tr>
-            <th lay-data="{align:'center'}">核定计税依据</th>
-            <th lay-data="{align:'center'}">核定比例</th>
-            <th lay-data="{align:'center'}">减免性质代码</th>
-            <th lay-data="{align:'center'}">减免税额</th>
-        </tr>
-        <tr>
-            <th lay-data="{field:'jine',edit: 'text'}">1</th>
-            <th lay-data="{field:'jsyj',edit: 'text'}">2</th>
-            <th lay-data="{field:'hdbl',edit: 'text'}">3</th>
-            <th lay-data="{field:'tysl',edit: 'text'}">4</th>
-            <th lay-data="{field:'bqynse',edit: 'text'}">5=1*4+2*3*4</th>
-            <th lay-data="{field:'bqynse_a',edit: 'text'}">6</th>
-            <th lay-data="{field:'jmxz',edit: 'text'}">7</th>
-            <th lay-data="{field:'jmse',edit: 'text'}">8</th>
-            <th lay-data="{field:'bqybse',edit: 'text'}">9=5-6-8</th>
-        </tr>
-        </thead>
-    </table>
-<script src="../../libs/layui/layui.js"></script>
-    <script>
-        layui.use('table', function(){
-            var table = layui.table;
-
-        });
-    </script>
-
-    <script type="text/html" id="titleTpl">
-        <a href="#" class="layui-table-link">aa</a>
-    </script>
+    <script src="../../libs/layui/layui.js"></script>
 </body>
 </html>
