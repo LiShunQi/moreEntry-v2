@@ -21,7 +21,7 @@ const PATHS = {
 };
 //获取 html 多模块入口文件
 var file_html = getEntry('./src/views/**/*.html','./src/views/');
-var file_js = getEntry('./src/views/**/*.js','./src/views/');
+var file_js = getEntry('./src/views/**/*+(.js|.ts)','./src/views/');
 var pages = Object.keys(file_html);
 
 var resolve = {
@@ -107,7 +107,8 @@ var loaders = [
             name: './static/images/[name].[ext]?' //输出目录以及名称
         }
     },
-    {test: /\.html$/, loader: 'html-loader'}
+    {test: /\.html$/, loader: 'html-loader'},
+    {test: /\.tsx?$/, loaders: ['awesome-typescript-loader']}
 ];
 var plugins = [
     new webpack.ProvidePlugin({ //全局配置加载
@@ -217,6 +218,7 @@ var config = {
     module: {
         rules: loaders
     },
+    devtool: 'source-map',
     resolve: resolve,
     plugins: plugins,
     //使用webpack-dev-server服务器，提高开发效率
