@@ -5,6 +5,6 @@ function greeter(person: string) {
     return "Hello, " + person;
 }
 
-let user = "Jane User";
+let user = "345678904567890-";
 
-document.body.innerHTML = greeter(user);
+// document.body.innerHTML = greeter(user);
