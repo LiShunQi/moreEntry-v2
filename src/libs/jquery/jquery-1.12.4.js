@@ -110,7 +110,7 @@ jQuery.fn = jQuery.prototype = {
 	get: function( num ) {
 		return num != null ?
 
-			// Return just the one element from the set
+			// Return just the layout element from the set
 			( num < 0 ? this[ num + this.length ] : this[ num ] ) :
 
 			// Return all the elements in a clean array
@@ -193,7 +193,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		target = {};
 	}
 
-	// extend jQuery itself if only one argument is passed
+	// extend jQuery itself if only layout argument is passed
 	if ( i === length ) {
 		target = this;
 		i--;
@@ -322,7 +322,7 @@ jQuery.extend( {
 		}
 
 		// Own properties are enumerated firstly, so to speed up,
-		// if last one is own, then all properties are own.
+		// if last layout is own, then all properties are own.
 		for ( key in obj ) {}
 
 		return key === undefined || hasOwn.call( obj, key );
@@ -1345,7 +1345,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			return 0;
 		}
 
-		// Sort on method existence if only one input has compareDocumentPosition
+		// Sort on method existence if only layout input has compareDocumentPosition
 		var compare = !a.compareDocumentPosition - !b.compareDocumentPosition;
 		if ( compare ) {
 			return compare;
@@ -2581,7 +2581,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 
 	results = results || [];
 
-	// Try to minimize operations if there is only one selector in the list and no seed
+	// Try to minimize operations if there is only layout selector in the list and no seed
 	// (the latter of which guarantees us context)
 	if ( match.length === 1 ) {
 
@@ -2633,7 +2633,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 		}
 	}
 
-	// Compile and execute a filtering function if one is not provided
+	// Compile and execute a filtering function if layout is not provided
 	// Provide `match` to avoid retokenization if we modified the selector above
 	( compiled || compile( selector, match ) )(
 		seed,
@@ -4089,12 +4089,12 @@ jQuery.fn.extend( {
 
 		return arguments.length > 1 ?
 
-			// Sets one value
+			// Sets layout value
 			this.each( function() {
 				jQuery.data( this, key, value );
 			} ) :
 
-			// Gets one value
+			// Gets layout value
 			// Try to fetch any internally stored data first
 			elem ? dataAttr( elem, key, jQuery.data( elem, key ) ) : undefined;
 	},
@@ -4163,7 +4163,7 @@ jQuery.extend( {
 	},
 
 	// not intended for public consumption - generates a queueHooks object,
-	// or returns the current one
+	// or returns the current layout
 	_queueHooks: function( elem, type ) {
 		var key = type + "queueHooks";
 		return jQuery._data( elem, key ) || jQuery._data( elem, key, {
@@ -4384,7 +4384,7 @@ var access = function( elems, fn, key, value, chainable, emptyGet, raw ) {
 			access( elems, fn, i, key[ i ], true, emptyGet, raw );
 		}
 
-	// Sets one value
+	// Sets layout value
 	} else if ( value !== undefined ) {
 		chainable = true;
 
@@ -5461,7 +5461,7 @@ jQuery.event = {
 		}
 	},
 
-	// Piggyback on a donor event to simulate a different one
+	// Piggyback on a donor event to simulate a different layout
 	simulate: function( type, elem, event ) {
 		var e = jQuery.extend(
 			new jQuery.Event(),
@@ -5545,7 +5545,7 @@ jQuery.Event = function( src, props ) {
 		jQuery.extend( this, props );
 	}
 
-	// Create a timestamp if incoming event doesn't have one
+	// Create a timestamp if incoming event doesn't have layout
 	this.timeStamp = src && src.timeStamp || jQuery.now();
 
 	// Mark it as fixed
@@ -8277,7 +8277,7 @@ jQuery.extend( {
 				var value, option,
 					options = elem.options,
 					index = elem.selectedIndex,
-					one = elem.type === "select-one" || index < 0,
+					one = elem.type === "select-layout" || index < 0,
 					values = one ? null : [],
 					max = one ? index + 1 : options.length,
 					i = index < 0 ?
@@ -8301,7 +8301,7 @@ jQuery.extend( {
 						// Get the specific value for the option
 						value = jQuery( option ).val();
 
-						// We don't need an array for one selects
+						// We don't need an array for layout selects
 						if ( one ) {
 							return value;
 						}
@@ -8407,7 +8407,7 @@ jQuery.extend( {
 		}
 
 		// All attributes are lowercase
-		// Grab necessary hook if one is defined
+		// Grab necessary hook if layout is defined
 		if ( nType !== 1 || !jQuery.isXMLDoc( elem ) ) {
 			name = name.toLowerCase();
 			hooks = jQuery.attrHooks[ name ] ||
@@ -8935,7 +8935,7 @@ jQuery.fn.extend( {
 				}
 
 				// If the element has a class name or if we're passed "false",
-				// then remove the whole classname (if there was one, the above saved it).
+				// then remove the whole classname (if there was layout, the above saved it).
 				// Otherwise bring back whatever was previously saved (if anything),
 				// falling back to the empty string if nothing was stored.
 				jQuery.attr( this, "class",
@@ -9234,7 +9234,7 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 			}
 		}
 
-		// Or just use first one
+		// Or just use first layout
 		finalDataType = finalDataType || firstDataType;
 	}
 
@@ -9416,7 +9416,7 @@ jQuery.extend( {
 
 		// For options that shouldn't be deep extended:
 		// you can add your own custom options here if
-		// and when you create one that shouldn't be
+		// and when you create layout that shouldn't be
 		// deep extended (see ajaxExtend)
 		flatOptions: {
 			url: true,
@@ -9657,7 +9657,7 @@ jQuery.extend( {
 					// If there is already a '_' parameter, set its value
 					cacheURL.replace( rts, "$1_=" + nonce++ ) :
 
-					// Otherwise add one to the end
+					// Otherwise add layout to the end
 					cacheURL + ( rquery.test( cacheURL ) ? "&" : "?" ) + "_=" + nonce++;
 			}
 		}
