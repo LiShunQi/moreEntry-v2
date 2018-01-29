@@ -1,18 +1,18 @@
 /**
  * Created by lsq on 2017/10/23.
  */
-var path = require('path');
-var glob = require('glob');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');//将你的行内样式提取到单独的css文件里，
-var HtmlWebpackPlugin = require('html-webpack-plugin'); //html模板生成器
-var CleanPlugin = require('clean-webpack-plugin'); // 文件夹清除工具
-var CopyWebpackPlugin = require('copy-webpack-plugin'); // 文件拷贝
-var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');//压缩css
-var UglifyJSPlugin = require('uglifyjs-webpack-plugin');//压缩js
+const path = require('path');
+const glob = require('glob');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');//将你的行内样式提取到单独的css文件里，
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //html模板生成器
+const CleanPlugin = require('clean-webpack-plugin'); // 文件夹清除工具
+const CopyWebpackPlugin = require('copy-webpack-plugin'); // 文件拷贝
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');//压缩css
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');//压缩js
 
 //取npm run 后的值
-var currentTarget = process.env.npm_lifecycle_event;
+const currentTarget = process.env.npm_lifecycle_event;
 //基本路径
 const PATHS = {
     node_modulesPath: path.resolve('./node_modules'),
@@ -20,11 +20,11 @@ const PATHS = {
     staticPath: path.resolve('src/static/')
 };
 //获取 html 多模块入口文件
-var file_html = getEntry('./src/views/**/*.html','./src/views/');
-var file_js = getEntry('./src/views/**/*+(.js|.ts)','./src/views/');
-var pages = Object.keys(file_html);
+let file_html = getEntry('./src/views/**/*.html','./src/views/');
+let file_js = getEntry('./src/views/**/*+(.js|.ts)','./src/views/');
+let pages = Object.keys(file_html);
 
-var resolve = {
+let resolve = {
     enforceExtension: false,
     alias: {
         jquery:  path.resolve(PATHS.libPath,  'jquery/jquery-1.12.4.js'),
@@ -36,15 +36,15 @@ var resolve = {
     modules: ["node_modules"]
 };
 //入口
-var entry = Object.assign(file_js,{
+let entry = Object.assign(file_js,{
     index: ['./src/index.js']
 });
-var output = {
+let output = {
     path: path.join(__dirname, 'build'),//（输出目录）
     publicPath: '/',	//模板、样式、脚本、图片等资源对应的server上的路径
     filename: 'static/js/[name]-[hash:6].js' //文件名称
 };
-var loaders = [
+let loaders = [
     {
         test: /\.css$/,
         use:  ExtractTextPlugin.extract({
@@ -110,7 +110,7 @@ var loaders = [
     {test: /\.html$/, loader: 'html-loader'},
     {test: /\.tsx?$/, loaders: ['awesome-typescript-loader']}
 ];
-var plugins = [
+let plugins = [
     new webpack.ProvidePlugin({ //全局配置加载
         $: "jquery",
         jQuery: "jquery",
@@ -179,12 +179,12 @@ if(currentTarget === "build"){
    );
 }
 //浏览器打开，代理
-var devServer = {
+let devServer = {
     historyApiFallback: true,
     inline: false,
     stats: { colors: true },
     host:'0.0.0.0',
-    port: 3300,
+    port: 3333,
     contentBase: './build',
     // proxy: {
     //     '/': {
@@ -196,8 +196,8 @@ var devServer = {
 };
 //生成HTML模板
 pages.forEach(function(pathname) {
-    var itemName  = pathname.split('\\'); //根据系统路径来取文件名,window下的做法//,其它系统另测
-    var conf = {
+    let itemName  = pathname.split('\\'); //根据系统路径来取文件名,window下的做法//,其它系统另测
+    let conf = {
         filename: 'views/' + pathname + '.html', //生成的html存放路径，相对于path
         template: path.resolve(__dirname, './src/views/' + pathname + '.html'), //html模板路径
         inject: true, //允许插件修改哪些内容，包括head与body
@@ -212,7 +212,7 @@ pages.forEach(function(pathname) {
     plugins.push(new HtmlWebpackPlugin(conf));
 });
 //基本配置
-var config = {
+let config = {
     entry: entry,
     output: output,
     module: {
@@ -229,11 +229,11 @@ module.exports = config;
 
 //按文件名来获取入口文件（即需要生成的模板文件数量）
 function getEntry(globPath, pathDir) {
-    var files = glob.sync(globPath);
-    var entries = {},
+    let files = glob.sync(globPath);
+    let entries = {},
         entry, dirname, basename, pathname, extname;
 
-    for (var i = 0; i < files.length; i++) {
+    for (let i = 0; i < files.length; i++) {
         entry = files[i];//每一个完整路径
         dirname = path.dirname(entry);//文件路径
         extname = path.extname(entry);//文件扩展名

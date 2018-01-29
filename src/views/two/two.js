@@ -14,5 +14,4 @@ $(document).ready(function () {
     let func = (x=1,y=1) => {
         return x + y;
     };
-    console.log(func(2,3))
 });
