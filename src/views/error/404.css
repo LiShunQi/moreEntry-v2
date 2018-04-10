@@ -1,0 +1,14 @@
+body{
+    background-color: #fff;
+    min-width: 1230px;
+}
+.Page{
+    width: 1200px;
+    margin: 0 auto;
+}
+.er404{
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 80px;
+}
